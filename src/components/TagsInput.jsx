@@ -1,15 +1,16 @@
-import React from "react";
+import React from "react"
 import './TagsInput.scss'
 
-const TagsInput = props => {
-    const [tags, setTags] = React.useState(["Kiwi", "Apple"]);
+const TagsInput = () => {
+    const [tags, setTags] = React.useState(["Kiwi", "Apple"])
+    
     const removeTags = indexToRemove => {
-        setTags([...tags.filter((_, index) => index !== indexToRemove)]);
-    };
+        setTags([...tags.filter((_, index) => index !== indexToRemove)])
+    }
     const addTags = event => {
         if (event.target.value !== "") {
-            setTags([...tags, event.target.value]);
-            event.target.value = "";
+            setTags([...tags, event.target.value])
+            event.target.value = ""
         }
     };
     return (
@@ -32,7 +33,7 @@ const TagsInput = props => {
                 placeholder="Press enter to add tags"
             />
         </div>
-    );
-};
+    )
+}
 
-export default TagsInput;
+export default TagsInput
